@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Gamepedia</string>
+    <string name="content_name">Content Title</string>
+    <string name="content_detail">Content Detail</string>
+</resources>
