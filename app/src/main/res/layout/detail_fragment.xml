@@ -3,13 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="com.strivere.gamepedia.ui.mainmenu.MainFragment"
-    android:label="main_fragment"
-    tools:context=".ui.mainmenu.MainFragment">
+    tools:context=".ui.menudetail.DetailFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_view_main_content"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:text="SECOND FRAGMENT" />
 
 </FrameLayout>

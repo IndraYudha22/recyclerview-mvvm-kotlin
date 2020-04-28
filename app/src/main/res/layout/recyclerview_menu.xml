@@ -11,16 +11,18 @@
     </data>
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginLeft="@dimen/marginLeft"
-    android:layout_marginRight="@dimen/marginRight"
-    android:layout_marginTop="@dimen/marginTop"
-    android:elevation="50dp"
-    android:background="@drawable/myrect">
+        android:id="@+id/layout_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/marginLeft"
+        android:layout_marginRight="@dimen/marginRight"
+        android:layout_marginTop="@dimen/marginTop"
+        android:elevation="50dp"
+        android:background="@drawable/myrect">
 
         <LinearLayout
+            android:id="@+id/layout_image"
             android:layout_width="80dp"
             android:layout_height="100dp"
             android:background="@drawable/frame">
@@ -40,8 +42,7 @@
 
 
         <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/layout_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -66,11 +67,12 @@
                     android:textStyle="bold"
                     tools:text="@string/content_name" />
                 <TextView
+                    app:text="@{gamepedia.content_detail}"
                     android:id="@+id/tv_item_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:maxLines="2"
+                    android:maxLines="4"
                     tools:text="@string/content_detail" />
 
             </LinearLayout>

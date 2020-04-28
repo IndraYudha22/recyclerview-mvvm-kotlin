@@ -5,11 +5,16 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface GamepediaApi {
 
     @GET("show_content.php?id=all")
     suspend fun getContent() : Response<List<Game>>
+
+    @GET("show_content.php?id={id}")
+    suspend fun getIdContent(@Path("id") id : String): Response<List<Game>>
 
     companion object{
         operator fun invoke() : GamepediaApi {
