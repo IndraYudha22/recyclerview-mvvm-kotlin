@@ -1,5 +1,9 @@
-package com.strivere.gamepedia
+package com.strivere.gamepedia.data.repositories
 
-class GamepediaRepository (private val api: GamepediaApi) : SafeApiRequest(){
+import com.strivere.gamepedia.data.network.GamepediaApi
+
+class GamepediaRepository (
+    private val api: GamepediaApi
+) : SafeApiRequest(){
     suspend fun getContent() = apiRequest { api.getContent() }
 }

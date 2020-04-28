@@ -1,4 +1,4 @@
-package com.strivere.gamepedia
+package com.strivere.gamepedia.data.repositories
 
 import retrofit2.Response
 import java.io.IOException
