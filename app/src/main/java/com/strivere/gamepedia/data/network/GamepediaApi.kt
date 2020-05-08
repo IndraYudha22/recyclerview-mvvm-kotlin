@@ -12,9 +12,9 @@ interface GamepediaApi {
 
     @GET("show_content.php?id=all")
     suspend fun getContent() : Response<List<Game>>
-
-    @GET("show_content.php?id={id}")
-    suspend fun getIdContent(@Path("id") id : String): Response<List<Game>>
+//
+    @GET("show_content.php")
+    suspend fun getIdContent(@Query("id") idContent : String): Response<List<Game>>
 
     companion object{
         operator fun invoke() : GamepediaApi {

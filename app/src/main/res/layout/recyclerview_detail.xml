@@ -5,9 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-    <variable
-        name="gamepedia"
-        type="com.strivere.gamepedia.data.models.Game" />
+        <variable
+            name="gamepedia"
+            type="com.strivere.gamepedia.data.models.Game" />
     </data>
 
     <LinearLayout
@@ -15,25 +15,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginStart="@dimen/marginLeft"
-        android:layout_marginEnd="@dimen/marginRight"
+        android:layout_marginLeft="@dimen/marginLeft"
+        android:layout_marginRight="@dimen/marginRight"
         android:layout_marginTop="@dimen/marginTop"
         android:elevation="50dp"
         android:background="@drawable/myrect">
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/layout_image"
             android:layout_width="80dp"
-            android:layout_height="100dp">
-            <com.google.android.material.imageview.ShapeableImageView
-                app:image="@{gamepedia.image_icon}"
-                app:imageRounded="@{gamepedia.image_icon}"
-                android:id="@+id/img_content"
+            android:layout_height="100dp"
+            android:background="@drawable/frame">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parent_layout"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/e30a047c2351fcd2033cbda7bdb2df3d"/>
-        </FrameLayout>
+                app:cardCornerRadius="10dp">
+                <ImageView
+                    app:image="@{gamepedia.image_icon}"
+                    android:id="@+id/img_contents"
+                    android:layout_width="80dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
 
         <RelativeLayout
@@ -53,24 +58,22 @@
                 android:layout_marginRight="8dp">
 
                 <TextView
-                    app:text="@{gamepedia.content_title}"
+                    app:text="@{gamepedia.id}"
                     android:id="@+id/tv_item_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    tools:text="@string/content_name"
-                    android:textColor="@color/colorWhite"/>
+                    tools:text="@string/content_name" />
                 <TextView
                     app:text="@{gamepedia.content_detail}"
-                    android:id="@+id/tv_item_d.etail"
+                    android:id="@+id/tv_item_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="4"
-                    tools:text="@string/content_detail"
-                    android:textColor="@color/colorWhite"/>
+                    tools:text="@string/content_detail" />
 
             </LinearLayout>
 

@@ -1,21 +1,19 @@
 package com.strivere.gamepedia.ui.mainmenu
 
-import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.imageview.ShapeableImageView
 import com.strivere.gamepedia.R
 import com.strivere.gamepedia.data.models.Game
 import com.strivere.gamepedia.databinding.RecyclerviewMenuBinding
 import com.strivere.gamepedia.ui.RecyclerViewClickListener
+import kotlinx.android.extensions.LayoutContainer
 
 class MainAdapter(private val content: List<Game>, private val listener: RecyclerViewClickListener)
     : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-
-    var id : String = ""
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         MainViewHolder(
@@ -37,9 +35,22 @@ class MainAdapter(private val content: List<Game>, private val listener: Recycle
         holder.recyclerviewMenuBinding.layoutAll.setOnClickListener {
             listener.onRecyclerViewItemClick(holder.recyclerviewMenuBinding.layoutAll, content[position], content[holder.adapterPosition].id)
         }
+        holder.bindItem(content[position])
     }
 
     inner class MainViewHolder(
         val recyclerviewMenuBinding: RecyclerviewMenuBinding
-    ) : RecyclerView.ViewHolder(recyclerviewMenuBinding.root)
+    ) : RecyclerView.ViewHolder(recyclerviewMenuBinding.root), LayoutContainer{
+        override val containerView: View?
+            get() = itemView
+
+        fun bindItem(item: Game){
+            containerView?.context.let {
+                recyclerviewMenuBinding.gamepedia = item
+                recyclerviewMenuBinding.executePendingBindings()
+            }
+        }
+
+    }
+
 }

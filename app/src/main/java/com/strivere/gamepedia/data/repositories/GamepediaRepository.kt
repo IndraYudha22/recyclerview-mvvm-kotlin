@@ -6,4 +6,5 @@ class GamepediaRepository (
     private val api: GamepediaApi
 ) : SafeApiRequest(){
     suspend fun getContent() = apiRequest { api.getContent() }
+    suspend fun getContentId(id: String) = apiRequest { api.getIdContent(id) }
 }
