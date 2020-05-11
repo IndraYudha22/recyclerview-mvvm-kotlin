@@ -12,7 +12,7 @@ interface GamepediaApi {
 
     @GET("show_content.php?id=all")
     suspend fun getContent() : Response<List<Game>>
-//
+
     @GET("show_content.php")
     suspend fun getIdContent(@Query("id") idContent : String): Response<List<Game>>
 

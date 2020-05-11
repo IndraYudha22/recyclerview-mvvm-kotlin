@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-    <variable
+        <variable
         name="gamepedia"
         type="com.strivere.gamepedia.data.models.Game" />
     </data>
@@ -27,7 +27,7 @@
             android:layout_height="100dp">
             <com.google.android.material.imageview.ShapeableImageView
                 app:image="@{gamepedia.image_icon}"
-                app:imageRounded="@{gamepedia.image_icon}"
+                app:imageRound="@{gamepedia.image_icon}"
                 android:id="@+id/img_content"
                 android:layout_width="80dp"
                 android:layout_height="100dp"

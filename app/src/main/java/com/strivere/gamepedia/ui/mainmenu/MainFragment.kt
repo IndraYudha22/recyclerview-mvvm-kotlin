@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.imageview.ShapeableImageView
@@ -28,9 +29,6 @@ import kotlinx.android.synthetic.main.recyclerview_menu.*
 
 class MainFragment : Fragment(),
     RecyclerViewClickListener {
-
-    private lateinit var id:String
-
 
     private lateinit var viewModel: MainViewModel
     private lateinit var factory: GamepediaViewModelFactory
@@ -53,7 +51,7 @@ class MainFragment : Fragment(),
         factory = GamepediaViewModelFactory(
             repository
         )
-        viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this, factory).get(MainViewModel::class.java)
         viewModel.getContent()
         viewModel.content.observe(viewLifecycleOwner, Observer { content ->
             if  (content != null){
@@ -77,7 +75,7 @@ class MainFragment : Fragment(),
 
     fun ShowFragmentDetail(idContent: String) {
         val someFragment: Fragment = DetailFragment.newInstance(idContent)
-        val transaction = requireFragmentManager().beginTransaction()
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment3, someFragment)
         transaction.addToBackStack(null)
         transaction.commit()

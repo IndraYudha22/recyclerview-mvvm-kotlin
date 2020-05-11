@@ -8,14 +8,14 @@ import com.google.android.material.shape.CornerFamily
 import com.strivere.gamepedia.R
 
 @BindingAdapter("image")
-fun loadImage(view : ImageView, url : String){
+fun loadImage(view : ImageView, url : String?){
     Glide.with(view)
         .load(url)
         .into(view)
 }
 
-@BindingAdapter("imageRounded")
-fun loadImageRounded(view : ShapeableImageView){
+@BindingAdapter("imageRound")
+fun loadImageRound(view : ShapeableImageView, url: String?){
     val radius = view.resources.getDimension(R.dimen.rounded)
     val imageContent: ShapeableImageView = view
     imageContent.shapeAppearanceModel = imageContent.shapeAppearanceModel
