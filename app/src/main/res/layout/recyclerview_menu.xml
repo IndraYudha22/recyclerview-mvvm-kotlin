@@ -6,74 +6,77 @@
 
     <data>
         <variable
-        name="gamepedia"
-        type="com.strivere.gamepedia.data.models.Game" />
+            name="gamepedia"
+            type="com.strivere.gamepedia.data.models.Game" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/layout_all"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="@dimen/marginLeft"
-        android:layout_marginEnd="@dimen/marginRight"
-        android:layout_marginTop="@dimen/marginTop"
-        android:elevation="50dp"
-        android:background="@drawable/myrect">
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
 
-        <FrameLayout
-            android:id="@+id/layout_image"
-            android:layout_width="80dp"
-            android:layout_height="100dp">
-            <com.google.android.material.imageview.ShapeableImageView
-                app:image="@{gamepedia.image_icon}"
-                app:imageRound="@{gamepedia.image_icon}"
-                android:id="@+id/img_content"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/e30a047c2351fcd2033cbda7bdb2df3d"/>
-        </FrameLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/layout_text"
+        <LinearLayout
+            android:id="@+id/layout_all"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="@drawable/layout_item_row">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <FrameLayout
+                android:id="@+id/layout_image"
+                android:layout_width="90dp"
+                android:layout_height="120dp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    app:image="@{gamepedia.image_icon}"
+                    android:id="@+id/img_content"
+                    android:layout_width="90dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/colorCardView">
 
-                <TextView
-                    app:text="@{gamepedia.content_title}"
-                    android:id="@+id/tv_item_name"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:text="@string/content_name"
-                    android:textColor="@color/colorWhite"/>
-                <TextView
-                    app:text="@{gamepedia.content_detail}"
-                    android:id="@+id/tv_item_d.etail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="4"
-                    tools:text="@string/content_detail"
-                    android:textColor="@color/colorWhite"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp">
 
-            </LinearLayout>
+                    <TextView
+                        app:text="@{gamepedia.content_title}"
+                        android:id="@+id/tv_item_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="@string/content_name"
+                        android:textColor="@color/textPrimary"/>
+                    <TextView
+                        app:text="@{gamepedia.content_detail}"
+                        android:id="@+id/tv_item_d.etail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="5"
+                        android:justificationMode="inter_word"
+                        tools:text="@string/content_detail"
+                        android:textColor="@color/textPrimary"/>
 
-        </RelativeLayout>
-    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

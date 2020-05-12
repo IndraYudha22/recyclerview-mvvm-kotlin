@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="gamepedia"
+            type="com.strivere.gamepedia.data.models.Game" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+        <ImageView
+            app:image="@{gamepedia.image_1}"
+            android:layout_width="180dp"
+            android:layout_height="120dp"
+            android:background="@color/colorCardView"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/e30a047c2351fcd2033cbda7bdb2df3d"/>
+    </androidx.cardview.widget.CardView>
+</layout>
