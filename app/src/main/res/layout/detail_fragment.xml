@@ -8,7 +8,7 @@
     <data>
         <variable
             name="gamepedia"
-            type="com.strivere.gamepedia.data.models.Game" />
+            type="com.strivere.gamepedia.data.models.DataContentItem" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -27,6 +27,7 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <LinearLayout
@@ -45,7 +46,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                app:image="@{gamepedia.image_cover}"
+                                app:image="@{gamepedia.data.image_cover}"
                                 android:id="@+id/img_cover"
                                 android:layout_width="0dp"
                                 android:layout_height="300dp"
@@ -68,8 +69,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:elevation="10dp"
-                    app:title="@{gamepedia.id}"
-                    app:titleTextColor="@color/colorPrimary"/>
+                    app:title="@{gamepedia.data.content_title}"
+                    app:titleTextColor="@color/textSecondary" />
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 

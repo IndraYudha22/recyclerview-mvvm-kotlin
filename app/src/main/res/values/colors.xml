@@ -6,5 +6,6 @@
     <color name="colorCardView">#FFFFFF</color>
     <color name="colorBackground">#FFFFFF</color>
     <color name="textPrimary">#424242</color>
+    <color name="textSecondary">#FFFFFF</color>
 
 </resources>

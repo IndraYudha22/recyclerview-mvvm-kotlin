@@ -24,3 +24,4 @@ fun loadImageRound(view : ShapeableImageView, url: String?){
         .setBottomLeftCorner(CornerFamily.ROUNDED, radius)
         .build()
 }
+

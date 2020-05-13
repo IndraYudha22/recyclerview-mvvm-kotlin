@@ -7,7 +7,7 @@
     <data>
         <variable
             name="gamepedia"
-            type="com.strivere.gamepedia.data.models.Game" />
+            type="String" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -17,7 +17,7 @@
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true">
         <ImageView
-            app:image="@{gamepedia.image_1}"
+            app:image="@{gamepedia}"
             android:layout_width="180dp"
             android:layout_height="120dp"
             android:background="@color/colorCardView"
@@ -25,4 +25,5 @@
             android:scaleType="centerCrop"
             android:src="@drawable/e30a047c2351fcd2033cbda7bdb2df3d"/>
     </androidx.cardview.widget.CardView>
+
 </layout>

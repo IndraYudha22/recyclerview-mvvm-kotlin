@@ -71,9 +71,9 @@ class DetailFragment : Fragment(), RecyclerViewClickListener {
                     binding.gamepedia = content[0]
                 }
                 rv_all_image.also {
-                    it.layoutManager = LinearLayoutManager(requireContext())
+                    it.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                     it.setHasFixedSize(true)
-                    it.adapter = ImageListAdapter(content, this)
+                    it.adapter = ImageListAdapter(content[0].image, this)
                 }
             }
         })

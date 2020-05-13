@@ -1,5 +1,6 @@
 package com.strivere.gamepedia.data.network
 
+import com.strivere.gamepedia.data.models.DataContentItem
 import com.strivere.gamepedia.data.models.Game
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -11,10 +12,10 @@ import retrofit2.http.Query
 interface GamepediaApi {
 
     @GET("show_content.php?id=all")
-    suspend fun getContent() : Response<List<Game>>
+    suspend fun getContent() : Response<List<DataContentItem>>
 
     @GET("show_content.php")
-    suspend fun getIdContent(@Query("id") idContent : String): Response<List<Game>>
+    suspend fun getIdContent(@Query("id") idContent : String): Response<List<DataContentItem>>
 
     companion object{
         operator fun invoke() : GamepediaApi {

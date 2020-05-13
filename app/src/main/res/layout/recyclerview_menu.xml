@@ -7,7 +7,7 @@
     <data>
         <variable
             name="gamepedia"
-            type="com.strivere.gamepedia.data.models.Game" />
+            type="com.strivere.gamepedia.data.models.DataContentItem" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -30,7 +30,7 @@
                 android:layout_width="90dp"
                 android:layout_height="120dp">
                 <com.google.android.material.imageview.ShapeableImageView
-                    app:image="@{gamepedia.image_icon}"
+                    app:image="@{gamepedia.data.image_icon}"
                     android:id="@+id/img_content"
                     android:layout_width="90dp"
                     android:layout_height="120dp"
@@ -54,7 +54,7 @@
                     android:layout_marginRight="8dp">
 
                     <TextView
-                        app:text="@{gamepedia.content_title}"
+                        app:text="@{gamepedia.data.content_title}"
                         android:id="@+id/tv_item_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                         tools:text="@string/content_name"
                         android:textColor="@color/textPrimary"/>
                     <TextView
-                        app:text="@{gamepedia.content_detail}"
+                        app:text="@{gamepedia.data.content_detail}"
                         android:id="@+id/tv_item_d.etail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

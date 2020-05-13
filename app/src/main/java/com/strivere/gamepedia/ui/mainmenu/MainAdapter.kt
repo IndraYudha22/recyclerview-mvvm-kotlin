@@ -7,12 +7,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import com.strivere.gamepedia.R
+import com.strivere.gamepedia.data.models.DataContentItem
 import com.strivere.gamepedia.data.models.Game
 import com.strivere.gamepedia.databinding.RecyclerviewMenuBinding
 import com.strivere.gamepedia.ui.RecyclerViewClickListener
 import kotlinx.android.extensions.LayoutContainer
 
-class MainAdapter(private val content: List<Game>, private val listener: RecyclerViewClickListener)
+class MainAdapter(private val content: List<DataContentItem>, private val listener: RecyclerViewClickListener)
     : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -33,7 +34,7 @@ class MainAdapter(private val content: List<Game>, private val listener: Recycle
         holder.recyclerviewMenuBinding.gamepedia = content[position]
         holder.recyclerviewMenuBinding.layoutImage.setOnClickListener {  }
         holder.recyclerviewMenuBinding.layoutAll.setOnClickListener {
-            listener.onRecyclerViewItemClick(holder.recyclerviewMenuBinding.layoutAll, content[position], content[holder.adapterPosition].id)
+            listener.onRecyclerViewItemClick(holder.recyclerviewMenuBinding.layoutAll, content[position].data, content[holder.adapterPosition].data.id)
         }
         holder.bindItem(content[position])
     }
@@ -44,7 +45,7 @@ class MainAdapter(private val content: List<Game>, private val listener: Recycle
         override val containerView: View?
             get() = itemView
 
-        fun bindItem(item: Game){
+        fun bindItem(item: DataContentItem){
             containerView?.context.let {
                 recyclerviewMenuBinding.gamepedia = item
                 recyclerviewMenuBinding.executePendingBindings()

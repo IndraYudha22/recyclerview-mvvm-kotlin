@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.strivere.gamepedia.R
+import com.strivere.gamepedia.data.models.DataContentItem
 import com.strivere.gamepedia.data.models.Game
 import com.strivere.gamepedia.databinding.RecyclerviewImageBinding
 import com.strivere.gamepedia.ui.RecyclerViewClickListener
 import kotlinx.android.extensions.LayoutContainer
 
-class ImageListAdapter(private val content: List<Game>, private val listener: RecyclerViewClickListener)
+class ImageListAdapter(private val content: List<String>, private val listener: RecyclerViewClickListener)
     : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -29,7 +30,6 @@ class ImageListAdapter(private val content: List<Game>, private val listener: Re
     }
 
     override fun onBindViewHolder(holder: ImageListAdapter.ImageViewHolder, position: Int) {
-        holder.recyclerviewImageBinding.gamepedia = content[position]
         holder.bindItem(content[position])
     }
 
@@ -37,7 +37,7 @@ class ImageListAdapter(private val content: List<Game>, private val listener: Re
         : RecyclerView.ViewHolder(recyclerviewImageBinding.root), LayoutContainer {
         override val containerView: View?
             get() = itemView
-        fun bindItem(item: Game){
+        fun bindItem(item: String){
             containerView?.context.let {
                 recyclerviewImageBinding.gamepedia = item
                 recyclerviewImageBinding.executePendingBindings()
