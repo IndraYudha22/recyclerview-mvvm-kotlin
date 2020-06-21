@@ -37,8 +37,8 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="10dp"
-                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="20dp"
                         android:layout_marginTop="-20dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,11 +66,14 @@
                 </LinearLayout>
 
                 <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbarDetail"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:elevation="10dp"
                     app:title="@{gamepedia.data.content_title}"
-                    app:titleTextColor="@color/textSecondary" />
+                    app:titleTextColor="@color/textSecondary"
+                    app:layout_collapseMode="pin"/>
+
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -104,10 +107,11 @@
                             android:layout_height="?attr/actionBarSize"
                             app:tabMode="fixed"
                             app:tabGravity="fill"/>
+
                         <androidx.viewpager.widget.ViewPager
                             android:id="@+id/viewPager"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
 
                 </LinearLayout>

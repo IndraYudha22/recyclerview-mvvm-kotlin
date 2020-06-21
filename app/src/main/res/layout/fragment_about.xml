@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.menudetail.AboutFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ini about"
-        android:textSize="50dp"
-        android:gravity="center"
-        android:textColor="@color/colorBackground"/>
+    <data>
+        <variable
+            name="gamepedia"
+            type="com.strivere.gamepedia.data.models.DataContentItem" />
+    </data>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/content_about"
+        app:text="@{gamepedia.data.content_detail}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="10dp"/>
+</layout>

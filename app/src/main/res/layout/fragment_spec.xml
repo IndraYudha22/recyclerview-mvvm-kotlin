@@ -1,16 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.menudetail.SpecFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ini spec"
-        android:textSize="50dp"
-        android:gravity="center"
-        android:textColor="@color/colorBackground"/>
+    <data>
+        <variable
+            name="gamepedia"
+            type="com.strivere.gamepedia.data.models.DataContentItem" />
+    </data>
 
-</LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/os"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="OS"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="5dp" />
+                <TextView
+                    app:text="@{gamepedia.data.spec_os}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="start|center"
+                    android:maxLines="2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/cpu"/>
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Processor"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    app:text="@{gamepedia.data.spec_processor}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="start|center"
+                    android:maxLines="2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ram"/>
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="RAM"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    app:text="@{gamepedia.data.spec_memory}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center|left"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/vga"/>
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Graphic"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    app:text="@{gamepedia.data.spec_graphich}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center|left"
+                    android:maxLines="3"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/hdd"/>
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Storage"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    app:text="@{gamepedia.data.spec_storage}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center|left"
+                    android:maxLines="3"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
